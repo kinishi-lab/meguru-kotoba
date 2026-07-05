@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 <title>めぐることば —答えは循環の中に—</title>
 <meta name="description" content="AIジャーナリングの「今日の小さな宣言」が、輪になって還ってくる。" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
+<meta name="theme-color" content="#FAF6F0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="めぐることば" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
@@ -34,7 +41,7 @@ window.storage = {
 };
 </script>
 
-<script id="app-source" type="text/plain">
+<script type="text/babel" data-presets="react">
 const { useState, useEffect, useMemo, useRef } = React;
 
 /* ============================================================
@@ -660,16 +667,6 @@ function Empty({ onGo }) {
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 
-</script>
-<script>
-(function () {
-  const source = document.getElementById("app-source").textContent;
-  const compiled = Babel.transform(source, {
-    presets: [["react", { runtime: "classic" }]],
-    sourceType: "script"
-  }).code;
-  new Function(compiled)();
-})();
 </script>
 </body>
 </html>
